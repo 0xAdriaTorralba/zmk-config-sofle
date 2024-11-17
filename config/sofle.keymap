@@ -81,6 +81,16 @@
 
             tapping-term-ms = <200>;
         };
+
+        service_mode: service_mode {
+            compatible = "zmk,behavior-hold-tap";
+            label = "SERVICE_MODE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <100>;
+            hold-trigger-key-positions = <0>;
+        };
     };
 
     macros {
@@ -120,11 +130,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&kp GRAVE             &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                   &kp N6             &kp N7    &kp N8     &kp N9     &kp N0            &kp MINUS
-&new_behavior2 4 TAB  &kp Q   &kp W      &kp E                    &kp R     &kp T                                    &kp Y              &kp U     &kp I      &kp O      &kp P             &kp RIGHT_BRACKET
-&kp CAPS              &kp A   &kp S      &kp D                    &kp F     &kp G                                    &kp H              &kp J     &kp K      &kp L      &kp SINGLE_QUOTE  &kp RETURN
-&kp LSHFT             &kp Z   &kp X      &c_trencada BACKSLASH C  &kp V     &kp B          &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH          &kp RSHFT
-                              &kp LCTRL  &kp LALT                 &kp LGUI  &kp BACKSPACE  &cmd_space    &alt_space  &kp SPACE          &kp RGUI  &kp RALT   &kp RCTRL
+&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                   &kp N6             &kp N7    &kp N8     &kp N9     &kp N0            &kp MINUS
+&new_behavior2 4 TAB                      &kp Q   &kp W      &kp E                    &kp R     &kp T                                    &kp Y              &kp U     &kp I      &kp O      &kp P             &kp RIGHT_BRACKET
+&kp CAPS                                  &kp A   &kp S      &kp D                    &kp F     &kp G                                    &kp H              &kp J     &kp K      &kp L      &kp SINGLE_QUOTE  &kp RETURN
+&kp LSHFT                                 &kp Z   &kp X      &c_trencada BACKSLASH C  &kp V     &kp B          &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH          &kp RSHFT
+                                                  &kp LCTRL  &kp LALT                 &kp LGUI  &kp BACKSPACE  &cmd_space    &alt_space  &kp SPACE          &kp RGUI  &kp RALT   &kp RCTRL
             >;
 
             sensor-bindings =
