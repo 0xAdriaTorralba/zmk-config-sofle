@@ -34,10 +34,11 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <100>;
             hold-trigger-key-positions = <39>;
-            require-prior-idle-ms = <0>;
-            quick-tap-ms = <0>;
+            require-prior-idle-ms = <100>;
+            quick-tap-ms = <50>;
+            flavor = "tap-preferred";
         };
 
         new_behavior2: new_behavior2 {
@@ -130,7 +131,7 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                   &kp N6             &kp N7    &kp N8     &kp N9     &kp N0            &kp MINUS
+&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                   &kp N6             &kp N7    &kp N8     &kp N9     &kp MINUS         &kp N0
 &new_behavior2 4 TAB                      &kp Q   &kp W      &kp E                    &kp R     &kp T                                    &kp Y              &kp U     &kp I      &kp O      &kp P             &kp RIGHT_BRACKET
 &kp CAPS                                  &kp A   &kp S      &kp D                    &kp F     &kp G                                    &kp H              &kp J     &kp K      &kp L      &kp SINGLE_QUOTE  &kp RETURN
 &kp LSHFT                                 &kp Z   &kp X      &c_trencada BACKSLASH C  &kp V     &kp B          &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH          &kp RSHFT
@@ -175,7 +176,7 @@
             //                |      |       |       |      |      |  |      |      |      |       |      |
 
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans          &trans                &trans              &trans      &trans            &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans          &trans                &trans              &trans      &trans            &kp EQUAL
 &trans      &kp INS       &kp PSCRN     &kp K_CMENU   &trans        &trans                          &kp PG_UP       &trans                &kp UP              &trans      &kp N0            &trans
 &trans      &kp LALT      &kp LCTRL     &kp LSHFT     &trans        &kp CLCK                        &kp LEFT_ARROW  &kp DOWN_ARROW        &kp UP_ARROW        &kp RIGHT   &kp LEFT_BRACKET  &kp BSPC
 &trans      &kp K_UNDO    &kp K_CUT     &kp K_COPY    &kp K_PASTE   &trans        &trans    &trans  &previous_page  &kp C_AC_SCROLL_DOWN  &kp C_AC_SCROLL_UP  &next_page  &trans            &trans
