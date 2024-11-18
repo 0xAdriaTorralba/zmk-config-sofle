@@ -234,11 +234,11 @@
         Game {
             display-name = "game";
             bindings = <
-&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                    &kp N6             &kp N7           &kp N8           &kp N9       &c_trencada LS(MINUS) MINUS            &c_trencada EQUAL N0
-&new_behavior2 4 TAB                      &kp Q   &kp W      &kp E                    &kp R     &cmd_t LG(T) T                            &kp Y              &kp U            &kp I            &kp O        &kp P                                  &kp RIGHT_BRACKET
-&kp CAPS                                  &kp A   &kp S      &kp D                    &kp F     &kp G                                     &kp H              &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RCTRL L  &c_trencada LEFT_BRACKET SINGLE_QUOTE  &kp RETURN
-&kp LSHFT                                 &kp Z   &kp X      &c_trencada BACKSLASH C  &kp V     &kp B           &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M            &kp COMMA        &kp DOT      &kp FSLH                               &kp RSHFT
-                                                  &kp LCTRL  &kp LALT                 &kp LGUI  &kp BACKSPACE   &cmd_space    &alt_space  &kp SPACE          &kp RGUI         &kp RALT         &kp RCTRL
+&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                    &kp N6             &kp N7    &kp N8     &kp N9     &c_trencada LS(MINUS) MINUS            &c_trencada EQUAL N0
+&new_behavior2 4 TAB                      &kp Q   &kp W      &kp E                    &kp R     &cmd_t LG(T) T                            &kp Y              &kp U     &kp I      &kp O      &kp P                                  &kp RIGHT_BRACKET
+&kp CAPS                                  &kp A   &kp S      &kp D                    &kp F     &kp G                                     &kp H              &kp J     &kp K      &kp L      &c_trencada LEFT_BRACKET SINGLE_QUOTE  &kp RETURN
+&kp LSHFT                                 &kp Z   &kp X      &c_trencada BACKSLASH C  &kp V     &kp B           &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH                               &kp RSHFT
+                                                  &kp LCTRL  &kp LALT                 &kp LGUI  &kp BACKSPACE   &cmd_space    &alt_space  &kp SPACE          &kp RGUI  &kp RALT   &kp RCTRL
             >;
 
             sensor-bindings =
