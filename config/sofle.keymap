@@ -27,8 +27,8 @@
         compatible = "zmk,conditional-layers";
 
         adjust_layer {
-            if-layers = <LOWER RAISE>;
-            then-layer = <ADJUST>;
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 
@@ -213,7 +213,7 @@
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4                               &none  &none           &none             &none       &none  &none
 &ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &rgb_ug RGB_SAD  &rgb_ug RGB_SAI  &rgb_ug RGB_EFF                            &none  &none           &none             &none       &none  &none
-&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &none            &none            &none                                      &none  &none           &none             &none       &none  &none
+&none              &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &to 0            &none            &to 5                                      &none  &none           &none             &none       &none  &none
 &none              &none            &none            &none            &none            &none            &rgb_ug RGB_TOG    &none  &none  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &none  &none
                                     &none            &none            &none            &none            &none              &none  &none  &none           &none             &none
             >;
@@ -229,6 +229,21 @@
             >;
 
             label = "Num";
+        };
+
+        Game {
+            display-name = "game";
+            bindings = <
+&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1  &kp N2     &kp N3                   &kp N4    &kp N5                                    &kp N6             &kp N7           &kp N8           &kp N9       &c_trencada LS(MINUS) MINUS            &c_trencada EQUAL N0
+&new_behavior2 4 TAB                      &kp Q   &kp W      &kp E                    &kp R     &cmd_t LG(T) T                            &kp Y              &kp U            &kp I            &kp O        &kp P                                  &kp RIGHT_BRACKET
+&kp CAPS                                  &kp A   &kp S      &kp D                    &kp F     &kp G                                     &kp H              &mt RIGHT_GUI J  &mt RIGHT_ALT K  &mt RCTRL L  &c_trencada LEFT_BRACKET SINGLE_QUOTE  &kp RETURN
+&kp LSHFT                                 &kp Z   &kp X      &c_trencada BACKSLASH C  &kp V     &kp B           &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M            &kp COMMA        &kp DOT      &kp FSLH                               &kp RSHFT
+                                                  &kp LCTRL  &kp LALT                 &kp LGUI  &kp BACKSPACE   &cmd_space    &alt_space  &kp SPACE          &kp RGUI         &kp RALT         &kp RCTRL
+            >;
+
+            sensor-bindings =
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>,
+                <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
 };
