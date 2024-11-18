@@ -16,8 +16,9 @@
 #define ADJUST 3
 
 &mt {
-    flavor = "tap-preferred";
-    quick-tap-ms = <50>;
+    flavor = "tap-unless-interrupted";
+    quick-tap-ms = <100>;
+    require-prior-idle-ms = <100>;
 };
 
 / {
@@ -146,7 +147,7 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1       &kp N2            &kp N3                   &kp N4          &kp N5                                    &kp N6             &kp N7    &kp N8     &kp N9     &c_trencada EQUAL MINUS                &kp N0
+&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1       &kp N2            &kp N3                   &kp N4          &kp N5                                    &kp N6             &kp N7    &kp N8     &kp N9     &c_trencada LS(MINUS) MINUS            &c_trencada EQUAL N0
 &new_behavior2 4 TAB                      &kp Q        &kp W             &kp E                    &kp R           &cmd_t LG(T) T                            &kp Y              &kp U     &kp I      &kp O      &kp P                                  &kp RIGHT_BRACKET
 &kp CAPS                                  &mt LCTRL A  &mt LEFT_SHIFT S  &mt LEFT_ALT D           &mt LEFT_GUI F  &kp G                                     &kp H              &kp J     &kp K      &kp L      &c_trencada LEFT_BRACKET SINGLE_QUOTE  &kp RETURN
 &kp LSHFT                                 &kp Z        &kp X             &c_trencada BACKSLASH C  &kp V           &kp B           &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH                               &kp RSHFT
