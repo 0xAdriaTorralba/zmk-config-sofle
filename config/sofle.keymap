@@ -36,7 +36,6 @@
             #binding-cells = <2>;
             tapping-term-ms = <100>;
             hold-trigger-key-positions = <39>;
-            require-prior-idle-ms = <100>;
             quick-tap-ms = <50>;
             flavor = "tap-preferred";
         };
@@ -92,6 +91,17 @@
             tapping-term-ms = <100>;
             hold-trigger-key-positions = <0>;
         };
+
+        cmd_t: cmd_t {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CMD_T";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <17>;
+        };
     };
 
     macros {
@@ -131,11 +141,11 @@
             //               | GUI | ALT  | CTRL | LOWER|  ENTER |  | SPACE | RAISE| CTRL  | ALT   | GUI  |
 
             bindings = <
-&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1       &kp N2            &kp N3                   &kp N4          &kp N5                                   &kp N6                   &kp N7    &kp N8     &kp N9     &kp MINUS         &kp N0
-&new_behavior2 4 TAB                      &kp Q        &kp W             &kp E                    &kp R           &kp T                                    &kp Y                    &kp U     &kp I      &kp O      &kp P             &kp RIGHT_BRACKET
-&kp CAPS                                  &mt LCTRL A  &mt LEFT_SHIFT S  &mt LEFT_ALT D           &mt LEFT_GUI F  &kp G                                    &kp H                    &kp J     &kp K      &kp L      &kp SINGLE_QUOTE  &kp RETURN
-&kp LSHFT                                 &kp Z        &kp X             &c_trencada BACKSLASH C  &kp V           &kp B          &kp C_MUTE    &kp C_MUTE  &c_trencada SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH          &kp RSHFT
-                                                       &kp LCTRL         &kp LALT                 &kp LGUI        &kp BACKSPACE  &cmd_space    &alt_space  &kp SPACE                &kp RGUI  &kp RALT   &kp RCTRL
+&service_mode LS(LA(SINGLE_QUOTE)) GRAVE  &kp N1       &kp N2            &kp N3                   &kp N4          &kp N5                                    &kp N6             &kp N7    &kp N8     &kp N9     &c_trencada EQUAL MINUS                &kp N0
+&new_behavior2 4 TAB                      &kp Q        &kp W             &kp E                    &kp R           &cmd_t LG(T) T                            &kp Y              &kp U     &kp I      &kp O      &kp P                                  &kp RIGHT_BRACKET
+&kp CAPS                                  &mt LCTRL A  &mt LEFT_SHIFT S  &mt LEFT_ALT D           &mt LEFT_GUI F  &kp G                                     &kp H              &kp J     &kp K      &kp L      &c_trencada LEFT_BRACKET SINGLE_QUOTE  &kp RETURN
+&kp LSHFT                                 &kp Z        &kp X             &c_trencada BACKSLASH C  &kp V           &kp B           &kp C_MUTE    &kp C_MUTE  &enya SEMICOLON N  &kp M     &kp COMMA  &kp DOT    &kp FSLH                               &kp RSHFT
+                                                       &kp LCTRL         &kp LALT                 &kp LGUI        &kp BACKSPACE   &cmd_space    &alt_space  &kp SPACE          &kp RGUI  &kp RALT   &kp RCTRL
             >;
 
             sensor-bindings =
@@ -206,11 +216,11 @@
 
         layer_num {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans   &trans     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp N7  &kp N8   &kp N9     &trans  &trans  &trans
-&trans  &trans  &sleep  &trans  &trans  &trans                    &kp N4  &kp N5   &kp N6     &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2   &kp N3     &trans  &trans  &trans
-                &trans  &trans  &trans  &trans  &trans    &trans  &kp N0  &kp DOT  &kp ENTER  &trans
+&trans  &trans   &trans  &trans  &trans  &trans                    &trans  &trans   &kp PERCENT  &kp SLASH  &trans  &trans
+&trans  &kp TAB  &trans  &trans  &trans  &trans                    &kp N7  &kp N8   &kp N9       &kp ASTRK  &trans  &trans
+&trans  &trans   &sleep  &trans  &trans  &trans                    &kp N4  &kp N5   &kp N6       &kp MINUS  &trans  &trans
+&trans  &trans   &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2   &kp N3       &kp PLUS   &trans  &trans
+                 &trans  &trans  &trans  &trans  &trans    &trans  &kp N0  &kp DOT  &kp ENTER    &trans
             >;
 
             label = "Num";
